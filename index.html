@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Informasi Konsentrasi Partikulat</title>
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//fonts.googleapis.com/css?family=Poppins:400,500%7CTeko:300,400,500%7CMaven+Pro:500"
+    />
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/StyleGrafik.css" />
+    <link rel="stylesheet" href="css/StyleText.css" />
+    <link rel="stylesheet" href="css/StyleTable.css" />
+    <style>
+      .ie-panel {
+        display: none;
+        background: #212121;
+        padding: 10px 0;
+        box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.3);
+        clear: both;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      html.ie-10 .ie-panel,
+      html.lt-ie-10 .ie-panel {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ie-panel">
+      <a href="http://windows.microsoft.com/en-US/internet-explorer/"
+        ><img
+          src="images/ie8-panel/warning_bar_0000_us.jpg"
+          height="42"
+          width="820"
+          alt="You are using an outdated browser. For a faster, safer bowsing experience, upgrade for free today."
+      /></a>
+    </div>
+    <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="page">
+      <header class="section page-header" id="home">
+        <div class="rd-navbar-wrap">
+          <nav
+            class="rd-navbar rd-navbar-classic novi-background"
+            data-layout="d-navbar-fixed"
+            data-sm-layout="rd-navbar-fixed"
+            data-md-layout="rd-navbar-fixed"
+            data-md-device-layout="rd-navbar-fixed"
+            data-lg-layout="rd-navbar-static"
+            data-lg-device-layout="rd-navbar-fixed"
+            data-xl-layout="rd-navbar-static"
+            data-xl-device-layout="rd-navbar-static"
+            data-xxl-layout="rd-navbar-static"
+            data-xxl-devic-layout="rd-navbar-static"
+            data-lg-stick-up-offset="50px"
+            data-xl-stick-up-offset="50px"
+            data-xxl-stick-up-offset="50px"
+            data-lg-stick-up="true"
+            data-xl-stick-up="true"
+            data-xxl-stick-up="true"
+            data-md-anchor-offset="-70px"
+            data-lg-anchor-offset="-70px"
+            data-xl-anchor-offset="-70px"
+            data-xxl-anchor-offset="-70px"
+          >
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <div class="rd-navbar-panel">
+                  <button
+                    class="rd-navbar-toggle"
+                    data-rd-navbar-toggle=".rd-navbar-nav-wrap"
+                  >
+                    <span></span>
+                  </button>
+                  <div class="rd-navbar-brand">
+                    <a class="brand" href="index.html"
+                      ><img
+                        src="images/imagesSendiri/GAWBMKG.png"
+                        alt=""
+                        width="150"
+                        height="relative"
+                    /></a>
+                  </div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+                    <div
+                      class="rd-navbar-share fl-bigmug-line-share27"
+                      data-rd-navbar-toggle=".rd-navbar-share-list"
+                    >
+                      <ul class="list-inline rd-navbar-share-list">
+                        <li class="rd-navbar-share-list-item">
+                          <a class="icon fa fa-facebook" href="#"></a>
+                        </li>
+                        <li class="rd-navbar-share-list-item">
+                          <a class="icon fa fa-twitter" href="#"></a>
+                        </li>
+                        <li class="rd-navbar-share-list-item">
+                          <a class="icon fa fa-google-pus" href="#"></a>
+                        </li>
+                        <li class="rd-navbar-share-list-item">
+                          <a class="icon fa fa-instagram" href="#"></a>
+                        </li>
+                      </ul>
+                    </div>
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item">
+                        <a class="rd-nav-link" href="#home">Home</a>
+                      </li>
+                      <li class="rd-nav-item">
+                        <a class="rd-nav-link" href="#projects"
+                          >Partikulat PM2.5</a
+                        >
+                      </li>
+                      <li class="rd-nav-item">
+                        <a class="rd-nav-link" href="#about-us"
+                          >Partikulat PM10</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="rd-navbar-project-hamburger"
+                    data-rd-navbar-toggle=".rd-navbar-main"
+                  >
+                    <div class="project-hamburger">
+                      <span class="project-hamburger-arrow-top"></span
+                      ><span class="project-hamburger-arrow-center"></span
+                      ><span class="project-hamburger-arrow-bottom"> </span>
+                    </div>
+                    <div class="project-close"><span></span><span></span></div>
+                  </div>
+                  <div class="rd-navbar-project rd-navbar-classic-project">
+                    <h4 class="text-spacing-50">Our Projects</h4>
+                    <h6 class="navbar-project-subtitle">
+                      Instagram - @Building
+                    </h6>
+                    <div
+                      class="rd-navbar-project-content rd-navbar-classic-project-content"
+                    >
+                      <div class="row" data-lightgallery="group">
+                        <div class="col-12">
+                          <article class="thumbnail thumbnail-mary">
+                            <div class="thumbnail-mary-figure">
+                              <img
+                                src="images/gallery-image-1-330x240.jpg"
+                                alt=""
+                                width="330"
+                                height="240"
+                              />
+                            </div>
+                            <div class="thumbnail-mary-caption">
+                              <a
+                                class="icon fl-bigmug-line-zoom60"
+                                href="images/grid-gallery-4-1200x800-original.jpg"
+                                data-lightgallery="item"
+                                ><img
+                                  src="images/gallery-image-1-330x240.jpg"
+                                  alt=""
+                                  width="330"
+                                  height="240"
+                              /></a>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-12">
+                          <article class="thumbnail thumbnail-mary">
+                            <div class="thumbnail-mary-figure">
+                              <img
+                                src="images/gallery-image-2-330x240.jpg"
+                                alt=""
+                                width="330"
+                                height="240"
+                              />
+                            </div>
+                            <div class="thumbnail-mary-caption">
+                              <a
+                                class="icon fl-bigmug-line-zoom60"
+                                href="images/fullwidth-masonry-gallery-10-1200x800-original.jpg"
+                                data-lightgallery="item"
+                                ><img
+                                  src="images/gallery-image-2-330x240.jpg"
+                                  alt=""
+                                  width="330"
+                                  height="240"
+                              /></a>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-12">
+                          <article class="thumbnail thumbnail-mary">
+                            <div class="thumbnail-mary-figure">
+                              <img
+                                src="images/gallery-image-3-330x240.jpg"
+                                alt=""
+                                width="330"
+                                height="240"
+                              />
+                            </div>
+                            <div class="thumbnail-mary-caption">
+                              <a
+                                class="icon fl-bigmug-line-zoom60"
+                                href="images/fullwidth-gallery-3-1200x800-original.jpg"
+                                data-lightgallery="item"
+                                ><img
+                                  src="images/gallery-image-3-330x240.jpg"
+                                  alt=""
+                                  width="330"
+                                  height="240"
+                              /></a>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-12">
+                          <article class="thumbnail thumbnail-mary">
+                            <div class="thumbnail-mary-figure">
+                              <img
+                                src="images/gallery-image-4-330x240.jpg"
+                                alt=""
+                                width="330"
+                                height="240"
+                              />
+                            </div>
+                            <div class="thumbnail-mary-caption">
+                              <a
+                                class="icon fl-bigmug-line-zoom60"
+                                href="images/masonry-gallery-4-1200x800-original.jpg"
+                                data-lightgallery="item"
+                                ><img
+                                  src="images/gallery-image-4-330x240.jpg"
+                                  alt=""
+                                  width="330"
+                                  height="240"
+                              /></a>
+                            </div>
+                          </article>
+                        </div>
+                        <div class="col-12">
+                          <article class="thumbnail thumbnail-mary">
+                            <div class="thumbnail-mary-figure">
+                              <img
+                                src="images/gallery-image-5-330x240.jpg"
+                                alt=""
+                                width="330"
+                                height="240"
+                              />
+                            </div>
+                            <div class="thumbnail-mary-caption">
+                              <a
+                                class="icon fl-bigmug-line-zoom60"
+                                href="images/fullwidth-masonry-gallery-6-1200x800-original.jpg"
+                                data-lightgallery="item"
+                                ><img
+                                  src="images/gallery-image-5-330x240.jpg"
+                                  alt=""
+                                  width="330"
+                                  height="240"
+                              /></a>
+                            </div>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section
+        class="section swiper-container swiper-slider swiper-slider-classic novi-background"
+        data-loop="true"
+        data-autoplay="5000"
+        data-simulate-touch="true"
+        data-direction="vertical"
+        data-nav="false"
+      >
+        <div class="swiper-wrapper text-center">
+          <!--menampilkan tulisan di awal dashboard-->
+          <div
+            class="swiper-slide context-dark"
+            data-slide-bg="images/imagesSendiri/GambarDasboard1.jpg"
+          >
+            <div class="swiper-slide-caption section-md">
+              <div class="container">
+                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">
+                  STASIUN PEMANTAU ATMOSFER GLOBAL LORE LINDU BARIRI
+                  <!--menampilkan TULISAN DI AWAL DASBOARD -->
+                </h1>
+                <p
+                  class="text-width-large"
+                  data-caption-animate="fadeInRight"
+                  data-caption-delay="100"
+                >
+                  At Building, we provide a complete range of construction
+                  services to diverse industries, including commercial,
+                  industrial, institutional, and medical.
+                </p>
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide context-dark"
+            data-slide-bg="images/imagesSendiri/GambarDasboard2.jpg"
+          >
+            <div class="swiper-slide-caption section-md">
+              <div class="container">
+                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">
+                  Committed and professional
+                </h1>
+                <p
+                  class="text-width-large"
+                  data-caption-animate="fadeInRight"
+                  data-caption-delay="100"
+                >
+                  At our company, we hire the best and the most committed
+                  construction experts who move the industry forward and create
+                  great spaces for your life and work.
+                </p>
+                <a
+                  class="button button-primary button-ujarak"
+                  href="#"
+                  data-caption-animate="fadeInUp"
+                  data-caption-delay="200"
+                  >learn More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide context-dark"
+            data-slide-bg="images/imagesSendiri/GambarDasboard3.jpg"
+          >
+            <div class="swiper-slide-caption section-md">
+              <div class="container">
+                <h1 data-caption-animate="fadeInLeft" data-caption-delay="0">
+                  Stainless Reputation
+                </h1>
+                <p
+                  class="text-width-large"
+                  data-caption-animate="fadeInRight"
+                  data-caption-delay="100"
+                >
+                  We’ve earned an outstanding reputation for our quality work
+                  and our integrity in dealing with clients, architects,
+                  suppliers, and subcontractors.
+                </p>
+                <a
+                  class="button button-primary button-ujarak"
+                  href="#"
+                  data-caption-animate="fadeInUp"
+                  data-caption-delay="200"
+                  >learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section section-sm section-fluid bg-default text-center novi-background bg-cover StyleGrafik StyleText StyleTable"
+        id="projects"
+      >
+        <div class="container-fluid isotope-wrap">
+          <h3 class="wow fadeInLeft">Partikulat PM2.5</h3>
+          <p class="kerataanTeks highcharts-figure">
+            Aerosol merupakan partikel berupa cairan dan -umumnya- padatan yang
+            melayang di atmosfer. Sumbernya dapat berasal dari alam maupun
+            antropogenik. Aerosol padat dengan ukuran jari-jari lebih kecil dari
+            2.5 μm disebut PM2.5 (Particulate Matter 2.5μm) atau debu halus dan
+            jika berukuran lebih kecil dari 10 μm disebut PM10 (Particulate
+            Matter 10μm) atau debu. Aerosol PM10 merupakan salah satu dari lima
+            parameter kualitas udara, bersama dengan karbon monoksida, oksida
+            nitrogen, oksida sulfur, dan ozon permukaan. Pada peristiwa
+            kebakaran hutan, aerosol PM10 bersama dengan ozon permukaan
+            menimbulkan suatu fenomena yang disebut asap kabut (smog).
+          </p>
+          <p class="kerataanTeks highcharts-figure">
+            Data pemantauan partikulat dilaporkan secara berkala ke Pusat Data
+            Aerosol Dunia atau World Data Centre for Aerosols (WDCA) disponsori
+            oleh Organisasi Meteorologi Dunia atau World Meteorological
+            Organization (WMO).
+          </p>
+        </div>
+
+        <div class="StyleGrafik">
+          <p>
+            <strong>Keterangan:</strong>
+          </p>
+
+          <ul class="listKeterangan">
+            <li>
+              <img
+                src="images/imagesSendiri/pm25-baik.webp"
+                alt="Baik"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm25-tidaksehat.webp"
+                alt="Sedang"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm25-sedang.webp"
+                alt="Tidak Sehat"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm25-sangattidaksehat.webp"
+                alt="Sangat Tidak Sehat"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm25-berbahaya.png"
+                alt="Berbahaya"
+                class="img"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <figure class="highcharts-figure">
+          <div id="container">
+            <script>
+              var xhr = new XMLHttpRequest();
+              xhr.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                  var dataArray = JSON.parse(this.responseText);
+
+                  var xAxisCategories = [];
+                  var yAxisValues = [];
+
+                  for (var i = 0; i < dataArray.length; i++) {
+                    var hour = dataArray[i].hour;
+                    var today = dataArray[i].today;
+                    var yesterday = dataArray[i].yesterday;
+
+                    xAxisCategories.push(hour);
+                    yAxisValues.push([today, yesterday]);
+                  }
+
+                  Highcharts.chart("container", {
+                    chart: {
+                      type: "spline",
+                    },
+                    title: {
+                      text: "Konsentrasi PM2.5",
+                    },
+                    subtitle: {
+                      text: "Stasiun Pemantau Atmosfer Global Lore Lindu Bariri",
+                      align: "center",
+                    },
+                    xAxis: {
+                      categories: xAxisCategories,
+                      title: {
+                        text: "Jam",
+                      },
+                    },
+                    yAxis: {
+                      title: {
+                        text: "Konsentrasi (ug/m3)",
+                      },
+                      min: 0,
+                      max: 300,
+                      minorGridLineWidth: 0,
+                      gridLineWidth: 0,
+                      alternateGridColor: null, //hapus garis pembatas pada nilai antara y axis
+                      plotBands: [
+                        {
+                          // Baik
+                          from: 0,
+                          to: 15.5,
+                          color: "rgba(0, 204, 0, 1)",
+                          label: {
+                            text: "Baik",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // Sedang
+                          from: 15.5,
+                          to: 55.4,
+                          color: "rgba(18, 13, 238, 1)",
+                          label: {
+                            text: "Sedang",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // tidak sehat
+                          from: 55.4,
+                          to: 150.4,
+                          color: "rgba(255, 201, 0, 1)",
+                          label: {
+                            text: "Tidak Sehat",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // Sangat Tidak Sehat
+                          from: 150.4,
+                          to: 250.4,
+                          color: "rgba(255, 46, 5, 1)",
+                          label: {
+                            text: "Sangat Tidak Sehat",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // Berbahaya
+                          from: 251,
+                          to: 300,
+                          color: "rgba(0,0,0,1)",
+                          label: {
+                            text: "Berbahaya",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                    series: [
+                      {
+                        name: "Kemarin",
+                        data: yAxisValues.map(function (data) {
+                          return data[1];
+                        }),
+                        color: "#FF0000",
+                        marker: {
+                          radius: 4,
+                        },
+                      },
+                      {
+                        name: "Hari Ini",
+                        data: yAxisValues.map(function (data) {
+                          return data[0];
+                        }),
+                        color: "#ffffff",
+                        marker: {
+                          radius: 4,
+                        },
+                      },
+                    ],
+                    plotOptions: {
+                      spline: {
+                        marker: {
+                          enabled: true,
+                        },
+                      },
+                    },
+                  });
+                }
+              };
+
+              xhr.open("GET", "db_prosesing.php", true);
+              xhr.send();
+            </script>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table-responsive">
+              <thead>
+                <tr>
+                  <th>Instrumen</th>
+                  <th>Tipe</th>
+                  <th>Merek</th>
+                  <th>Tahun Operasional</th>
+                  <th>Kalibrasi</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>BAM PM<sub>2.5</sub></td>
+                  <td>BAM1020</td>
+                  <td>Met One</td>
+                  <td>2021</td>
+                  <td>November 2023</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </section>
+      <section
+        class="section section-sm section-fluid bg-default text-center novi-background bg-cover StyleGrafik StyleText StyleTable"
+        id="about-us"
+      >
+        <div class="container-fluid isotope-wrap">
+          <h3 class="wow fadeInLeft">Partikulat PM10</h3>
+          <p class="kerataanTeks highcharts-figure">
+            Aerosol merupakan partikel berupa cairan dan -umumnya- padatan yang
+            melayang di atmosfer. Sumbernya dapat berasal dari alam maupun
+            antropogenik. Aerosol padat dengan ukuran jari-jari lebih kecil dari
+            2.5 μm disebut PM2.5 (Particulate Matter 2.5μm) atau debu halus dan
+            jika berukuran lebih kecil dari 10 μm disebut PM10 (Particulate
+            Matter 10μm) atau debu. Aerosol PM10 merupakan salah satu dari lima
+            parameter kualitas udara, bersama dengan karbon monoksida, oksida
+            nitrogen, oksida sulfur, dan ozon permukaan. Pada peristiwa
+            kebakaran hutan, aerosol PM10 bersama dengan ozon permukaan
+            menimbulkan suatu fenomena yang disebut asap kabut (smog).
+          </p>
+          <p class="kerataanTeks highcharts-figure">
+            Data pemantauan partikulat dilaporkan secara berkala ke Pusat Data
+            Aerosol Dunia atau World Data Centre for Aerosols (WDCA) disponsori
+            oleh Organisasi Meteorologi Dunia atau World Meteorological
+            Organization (WMO).
+          </p>
+        </div>
+
+        <div class="StyleGrafik">
+          <p>
+            <strong>Keterangan:</strong>
+          </p>
+
+          <ul class="listKeterangan">
+            <li>
+              <img
+                src="images/imagesSendiri/pm10-baik.webp"
+                alt="Baik"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm10-tidaksehat.webp"
+                alt="Sedang"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm10-sedang.webp"
+                alt="Tidak Sehat"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm10-sangattidaksehat.webp"
+                alt="Sangat Tidak Sehat"
+                class="img"
+              />
+            </li>
+            <li>
+              <img
+                src="images/imagesSendiri/pm10-berbahaya.webp"
+                alt="Berbahaya"
+                class="img"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <figure class="highcharts-figure">
+          <div id="container1">
+            <script>
+              var xhr = new XMLHttpRequest();
+              xhr.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                  var dataArray = JSON.parse(this.responseText);
+
+                  var xAxisCategories = [];
+                  var yAxisValues = [];
+
+                  for (var i = 0; i < dataArray.length; i++) {
+                    var hour = dataArray[i].hour;
+                    var today = dataArray[i].today;
+                    var yesterday = dataArray[i].yesterday;
+
+                    xAxisCategories.push(hour);
+                    yAxisValues.push([today, yesterday]);
+                  }
+
+                  Highcharts.chart("container1", {
+                    chart: {
+                      type: "spline",
+                    },
+                    title: {
+                      text: "Konsentrasi PM10",
+                    },
+                    subtitle: {
+                      text: "Stasiun Pemantau Atmosfer Global Lore Lindu Bariri",
+                      align: "center",
+                    },
+                    xAxis: {
+                      categories: xAxisCategories,
+                      title: {
+                        text: "Jam",
+                      },
+                    },
+                    yAxis: {
+                      title: {
+                        text: "Konsentrasi (ug/m3)",
+                      },
+                      min: 0,
+                      max: 600,
+                      minorGridLineWidth: 0,
+                      gridLineWidth: 0,
+                      alternateGridColor: null, //hapus garis pembatas pada nilai antara y axis
+                      plotBands: [
+                        {
+                          // Baik
+                          from: 0,
+                          to: 50,
+                          color: "rgba(0, 204, 0, 1)",
+                          label: {
+                            text: "Baik",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // Sedang
+                          from: 51,
+                          to: 150,
+                          color: "rgba(18, 13, 238, 1)",
+                          label: {
+                            text: "Sedang",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // tidak sehat
+                          from: 151,
+                          to: 350,
+                          color: "rgba(255, 201, 0, 1)",
+                          label: {
+                            text: "Tidak Sehat",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // Sangat Tidak Sehat
+                          from: 351,
+                          to: 420,
+                          color: "rgba(255, 46, 5, 1)",
+                          label: {
+                            text: "Sangat Tidak Sehat",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                        {
+                          // Berbahaya
+                          from: 421,
+                          to: 600,
+                          color: "rgba(0,0,0,1)",
+                          label: {
+                            text: "Berbahaya",
+                            style: {
+                              color: "#606060",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                    series: [
+                      {
+                        name: "Kemarin",
+                        data: yAxisValues.map(function (data) {
+                          return data[1];
+                        }),
+                        color: "#FF0000",
+                        marker: {
+                          radius: 4,
+                        },
+                      },
+                      {
+                        name: "Hari Ini",
+                        data: yAxisValues.map(function (data) {
+                          return data[0];
+                        }),
+                        color: "#ffffff",
+                        marker: {
+                          radius: 4,
+                        },
+                      },
+                    ],
+                    plotOptions: {
+                      spline: {
+                        marker: {
+                          enabled: true,
+                        },
+                      },
+                    },
+                  });
+                }
+              };
+
+              xhr.open("GET", "db_prosesing_pm10.php", true);
+              xhr.send();
+            </script>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table-responsive">
+              <thead>
+                <tr>
+                  <th>Instrumen</th>
+                  <th>Tipe</th>
+                  <th>Merek</th>
+                  <th>Tahun Operasional</th>
+                  <th>Kalibrasi</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>BAM PM<sub>10</sub></td>
+                  <td>BAM1020</td>
+                  <td>Met One</td>
+                  <td>2021</td>
+                  <td>November 2023</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </section>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
